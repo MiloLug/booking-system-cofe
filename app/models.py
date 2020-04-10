@@ -6,26 +6,26 @@ from mongoengine.fields import DateTimeField, DictField
 
 
 class User(db.Document,UserMixin):
-    username = db.StringField()
-    password = db.StringField()
+    username = db.StringField(required=True,max_length=10)
+    password = db.StringField(required=True,max_length=10)
     role = db.StringField()
 
     def __repr__(self):
         return "<{}:{}>".format(self.id, self.username)
 
 class Order(db.Document):
-    number = db.IntField()
-    customer = db.IntField()
-    table_id = db.IntField()
-    date = DateTimeField()
+    number = db.IntField(required=True)
+    customer = db.IntField(required=True)
+    table_id = db.IntField(required=True)
+    date = DateTimeField(required=True)
     people_number = db.IntField()
 
     def __repr__(self):
         return "<{}:{}>".format(self.id, self.number )
 
 class Customer(db.Document):
-    name = db.StringField()
-    email = db.EmailField()
+    name = db.StringField(required=True)
+    email = db.EmailField(required=True)
     visits =  db.IntField()
     phone = db.StringField()
 
@@ -33,11 +33,11 @@ class Customer(db.Document):
         return "<{}:{}>".format(self.id, self.name)
 
 class Table(db.Document):
-    number = db.IntField()
-    place_count = db.IntField()
-    figure =  db.StringField()
-    coordinates = db.DictField()
-    size = db.DictField()
+    number = db.IntField(required=True)
+    place_count = db.IntField(required=True)
+    figure =  db.StringField(required=True)
+    coordinates = db.DictField(required=True)
+    size = db.DictField(required=True)
 
     def __repr__(self):
         return "<{}:{}>".format(self.id, self.number)
