@@ -1,4 +1,6 @@
 from app import db, login_manager
+from datetime import datetime
+from flask_login import (LoginManager, UserMixin, login_required,login_user, current_user, logout_user)
 from flask_login import LoginManager,UserMixin,login_required, login_user, current_user,logout_user
 import mongoengine as me
 
@@ -18,6 +20,34 @@ class User(me.Document,UserMixin):
     def check_password(self,  password):
         return check_password_hash(self.password_hash, password)  
 
+
+class Order(me.Document):
+    number = db.IntField()
+    customer = ReferenceField(Customer)
+    table_id = db.IntField()
+    date = DateTimeField()
+    people_number = db.IntField()
+
+    def __repr__(self):
+        return "<{}:{}>".format(self.id, self.username)
+
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.objects(pk=user_id).first()
+
+
+
+
+class Customer():
+    name = db.StringField()
+    email = db.EmailField()
+    visits =  db.IntField()
+    phone = db.StringField()
+
+    def __repr__(self):
+        return "<{}:{}>".format(self.id, self.name
 
 
 @login_manager.user_loader
