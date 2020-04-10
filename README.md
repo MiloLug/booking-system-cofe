@@ -1,4 +1,15 @@
-# booking-cafe-system
+#### booking-cafe-system
+#Get Started
+- install python3 and virtualenv
+- install mongodb
+- push command in terminal: python3 -m venv env
+- push command in terminal: source env/bin/activate
+- push command in terminal: pip install -r req.txt
+- for run: python runner.py runserver
+
+
+
+##Task description
 Схема зала - столы, у каждого из которых есть следующие свойства:
 -	номер
 -	количество мест
