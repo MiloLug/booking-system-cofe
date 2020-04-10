@@ -7,7 +7,7 @@ from flask_mail import Message
 
 def async_send_mail(app, msg):
     with app.app_context():
-	mail.send(msg)
+        mail.send(msg)
 
 
 def send_mail(subject, recipient, template, **kwargs):

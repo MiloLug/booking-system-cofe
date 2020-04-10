@@ -1,8 +1,9 @@
 from app import app
 from flask_login import login_required, login_user,current_user, logout_user
 from flask import request, redirect, render_template, url_for,flash,make_response,session
-from forms import LoginForm
-from utils import send_mail
+from .forms import LoginForm
+from .utils import send_mail
+from flask_script import Manager, Shell
 
 
 

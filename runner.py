@@ -1,6 +1,6 @@
 import os
 from app import app, db
-from models import User, Order, Customer
+from app.models import User, Order, Customer
 from flask_script import Manager, Shell
 from flask_migrate import Message
 

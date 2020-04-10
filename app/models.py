@@ -23,7 +23,7 @@ class User(me.Document,UserMixin):
 
 class Order(me.Document):
     number = db.IntField()
-    customer = ReferenceField(Customer)
+    customer = Customer()
     table_id = db.IntField()
     date = DateTimeField()
     people_number = db.IntField()
@@ -33,9 +33,6 @@ class Order(me.Document):
 
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.objects(pk=user_id).first()
 
 
 
@@ -47,9 +44,4 @@ class Customer():
     phone = db.StringField()
 
     def __repr__(self):
-        return "<{}:{}>".format(self.id, self.name
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.objects(pk=user_id).first()
+        return "<{}:{}>".format(self.id, self.name)

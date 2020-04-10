@@ -1,4 +1,6 @@
 from flask import Flask
+from flask_login.login_manager import LoginManager
+
 from flask_script import Manager, Command, Shell
 from werkzeug.security import generate_password_hash,  check_password_hash
 from flask_mongoengine import MongoEngine, MongoEngineSessionInterface,BaseQuerySet
