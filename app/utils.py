@@ -9,7 +9,6 @@ def async_send_mail(app, msg):
     with app.app_context():
         mail.send(msg)
 
-
 def send_mail(subject, recipient, template, **kwargs):
     msg = Message(subject, sender=app.config['MAIL_DEFAULT_SENDER'],  recipients=[recipient])
     msg.html = render_template(template, **kwargs)
