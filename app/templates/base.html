@@ -1,23 +1,22 @@
-{# Это шаблон templates/base.html #}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% include 'components/style.html' %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <title>Кафе "Мякотка": {% block title %}Title{% endblock %}</title>
 </head>
 
-<body>
-    <header class="header">
+
+<body id="scene">
+    <header class="header" data-depth="0.3">
         <div class="header-content">
             <a class="logo" href="/">Кафе "Мякотка" : {% block visibletitle %}Главная{% endblock %}</a> {% include 'components/nav.html' %}
         </div>
     </header>
     {% block content %}
     <p>Дата: {{current_date}}</p>
-    {% endblock %} 
-    {% include "components/scripts.html" %}
+    {% endblock %} {% include "components/scripts.html" %}
 </body>
 
 </html>

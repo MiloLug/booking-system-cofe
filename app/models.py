@@ -1,7 +1,7 @@
 from app import db, login_manager
 from datetime import datetime
 from flask_login import LoginManager,UserMixin,login_required, login_user, current_user,logout_user
-from mongoengine.fields import DateTimeField
+from mongoengine.fields import DateTimeField, DictField
 
 
 
@@ -31,6 +31,16 @@ class Customer(db.Document):
 
     def __repr__(self):
         return "<{}:{}>".format(self.id, self.name)
+
+class Table(db.Document):
+    number = db.IntField()
+    place_count = db.IntField()
+    figure =  db.StringField()
+    coordinates = db.DictField()
+    size = db.DictField()
+
+    def __repr__(self):
+        return "<{}:{}>".format(self.id, self.number)
 
 @login_manager.user_loader
 def load_user(user_id):

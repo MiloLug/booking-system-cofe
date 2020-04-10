@@ -1,0 +1,79 @@
+a {
+    text-decoration: none;
+    color: #363636;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+header.header {
+    width: 95%;
+    -webkit-box-shadow: 0px 10px 25px -7px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0px 10px 25px -7px rgba(0, 0, 0, 0.23);
+    box-shadow: 0px 10px 25px -7px rgba(0, 0, 0, 0.23);
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #363636;
+}
+
+header.header .header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.header .header-content ul {
+    display: flex !important;
+    width: 300px;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+header.header .header-content .logo {
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+/*css for calendar*/
+
+.ui-widget.ui-widget-content {
+    border: 0 !important;
+    -webkit-box-shadow: 0px 10px 43px -15px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 0px 10px 43px -15px rgba(0, 0, 0, 0.63);
+    box-shadow: 0px 10px 43px -15px rgba(0, 0, 0, 0.63);
+    border-radius: 10px;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    background: #fff;
+    border: 0 !important;
+}
+
+.ui-state-default {
+    background: #fff !important;
+    border-radius: 5px !important;
+    border: 0.5px solid #eaeaea !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.ui-state-default.ui-state-active {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.body {
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+    margin-top: 50px;
+}
