@@ -1,5 +1,9 @@
+ {% set menu_items = [{'href':'/','text':'Главная','page':'handler_date'},{'href':'/info','text':'Инфо','page':'info'},{'href':'/login','text':'Войти','page':'login'}] %}
+
 <ul>
-    <li><a href="/">Главная</a></li>
-    <li><a href="/info">Инфо</a></li>
-    <li><a href="/login">Войти</a></li>
+    {% for key in menu_items %}
+    <li {% if request.endpoint == key['page'] %} class='active' {% endif %}><a href={{key['href']}}>{{key['text']}}</a></li>
+    {% endfor %} {# {% for user in user_list %}
+    <li>{{ user }}</li>
+    {% endfor %}#}
 </ul>

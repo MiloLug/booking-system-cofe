@@ -27,7 +27,11 @@ def index():
 
 @app.route('/<date>')
 def handler_date(date):
-    return render_template('index.html', current_date=date)
+    return render_template('index.html')
+
+@app.route('/info')
+def info():
+    return render_template('info.html')
 
 @app.route('/login', methods=['post','get'])
 def login():
