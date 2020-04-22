@@ -29,7 +29,8 @@ def make_demo():
     for item in range(random.randint(3, 16)):
         customer_for_order_fake = Customer.objects.all()
         table_for_order_fake = Table.objects.all()
-        table = Order(customer=customer_for_order_fake[random.randint(0, Customer.objects.count())],table_id=table_for_order_fake[random.randint(0,  Table.objects.count())],date=datetime.datetime.today(),people_number=random.randint(1, 4)).save()
+        ttday = datetime.datetime.today()
+        table = Order(customer=customer_for_order_fake[random.randint(0, Customer.objects.count())],table_id=table_for_order_fake[random.randint(0,  Table.objects.count())],date=ttday.strftime("%m-%d-%Y"),people_number=random.randint(1, 4)).save()
     print("foo command executed")
 
 

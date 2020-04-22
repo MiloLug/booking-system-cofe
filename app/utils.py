@@ -2,6 +2,7 @@ from . import mail, db
 from flask import render_template
 from threading import Thread
 from app import app
+from .models import User, Order, Customer, Table
 from flask_mail import Message
 
 
@@ -15,3 +16,7 @@ def send_mail(subject, recipient, template, **kwargs):
     thrd = Thread(target=async_send_mail, args=[app,  msg])
     thrd.start()
     return thrd
+
+def get_tebles(data):
+    for table in Table.objects:
+        pass
