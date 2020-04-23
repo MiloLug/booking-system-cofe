@@ -5,6 +5,7 @@
 - push command in terminal: python3 -m venv env
 - push command in terminal: source env/bin/activate
 - push command in terminal: pip install -r req.txt
+- push command in terminal: make_demo ( for create demo data )
 - for run: python runner.py runserver
 
 
